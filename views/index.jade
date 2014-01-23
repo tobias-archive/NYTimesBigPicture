@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.container
+		h1 New York Times Big Picture
+		h2 NYTimes OpenHack by Tobias Wright
+		each val in json
+			h3= val.title
+			p(class="byline")= val.byline
+			a(href=val.url)
+				img(src=val.image alt=val.caption class='img-responsive')
+			p= val.abstract 
+				&nbsp;<a href=val.url>Read more</a>
